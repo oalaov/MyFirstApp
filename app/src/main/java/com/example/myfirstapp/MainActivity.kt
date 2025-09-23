@@ -1,5 +1,6 @@
 package com.example.myfirstapp
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.View
@@ -17,9 +18,11 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.myfirstapp.ui.theme.BlankFragment
 import com.example.myfirstapp.ui.theme.MyfirstappTheme
 
 class MainActivity : ComponentActivity() {
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,6 +37,7 @@ class MainActivity : ComponentActivity() {
             val truepass = "123123"
             if (mail == truemail && password == truepass) {
                 Toast.makeText(this, "Вы вошли в систему", Toast.LENGTH_LONG).show()
+
             } else {
                 Toast.makeText(this, "Неверная почта или пароль", Toast.LENGTH_LONG).show()
                 AlertDialog.Builder(this)
