@@ -26,10 +26,10 @@ class MainActivity : ComponentActivity() {
             val password = entpassword.text.toString()
             val truemail = "magamed@gmail.com"
             val truepass = "123123"
+            intent.putExtra("userNm", mail)
             if (debugLogin.isChecked || mail == truemail && password == truepass) {
                 Toast.makeText(this, "Вы вошли в систему", Toast.LENGTH_LONG).show()
                 val nextActivity = Intent(this, MainActivity2::class.java)
-                intent.putExtra("userNm", mail)
                 startActivity(nextActivity)
 
             } else {
