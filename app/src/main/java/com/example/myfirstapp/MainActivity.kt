@@ -2,6 +2,7 @@ package com.example.myfirstapp
 
 import android.annotation.SuppressLint
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -37,6 +38,8 @@ class MainActivity : ComponentActivity() {
             val truepass = "123123"
             if (mail == truemail && password == truepass) {
                 Toast.makeText(this, "Вы вошли в систему", Toast.LENGTH_LONG).show()
+                val nextActivity = Intent(this, MainActivity2::class.java)
+                startActivity(nextActivity)
 
             } else {
                 Toast.makeText(this, "Неверная почта или пароль", Toast.LENGTH_LONG).show()
@@ -48,6 +51,7 @@ class MainActivity : ComponentActivity() {
                         clearpass.text.clear()
                         val clearmail = findViewById<EditText>(R.id.emailAddress)
                         clearmail.text.clear()
+
                     }
 
 
